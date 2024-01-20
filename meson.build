@@ -1,17 +1,18 @@
 project('spdlog', 'cpp',
     default_options: [
         'buildtype=debugoptimized',
-        'cpp_std=c++2a',
+        'cpp_std=c++20',
         'cpp_rtti=false',
         'cpp_eh=none'
-    ]
+    ],
+    version: '1.12.0'
 )
 
 compiler = meson.get_compiler('cpp')
 link_deps = [ dependency('fmt') ]
 
 incdirs = ['include']
-cflags = ['-DSPDLOG_COMPILED_LIB', '-DSPDLOG_FMT_EXTERNAL', '-DSPDLOG_NO_EXCEPTIONS']
+cpp_flags = ['-DSPDLOG_COMPILED_LIB', '-DSPDLOG_FMT_EXTERNAL', '-DSPDLOG_NO_EXCEPTIONS']
 
 sources = [
   'src/async.cpp',
@@ -25,14 +26,15 @@ sources = [
 
 incdirs = include_directories(incdirs)
 
-spdlog = static_library(
+spdlog = library(
     'spdlog',
     sources,
-    cpp_args: cflags,
+    cpp_args: cpp_flags,
     include_directories: incdirs,
     dependencies: link_deps,
 )
 spdlog_dep = declare_dependency(
+    compile_args: cpp_flags,
     include_directories: incdirs,
     dependencies: link_deps,
     link_with: spdlog,
