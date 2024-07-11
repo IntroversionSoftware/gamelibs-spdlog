@@ -23,6 +23,7 @@ SPDLOG_INLINE thread_pool::thread_pool(size_t q_max_items,
             "spdlog::thread_pool(): invalid threads_n param (valid "
             "range is 1-1000)");
     }
+    threads_.reserve(threads_n);
     for (size_t i = 0; i < threads_n; i++) {
         threads_.emplace_back([this, on_thread_start, on_thread_stop] {
             on_thread_start();
