@@ -113,7 +113,6 @@ bool SPDLOG_INLINE thread_pool::process_next_msg_() {
         }
         case async_msg_type::flush: {
             incoming_async_msg.worker_ptr->backend_flush_();
-            incoming_async_msg.flush_promise.set_value();
             return true;
         }
 
