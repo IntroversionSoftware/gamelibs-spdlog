@@ -372,7 +372,7 @@ inline fmt::basic_string_view<T> to_string_view(fmt::basic_format_arg<T> fmt) {
 }
 #else
 template <typename T, typename... Args>
-inline fmt::basic_string_view<T> to_string_view(fmt::basic_format_string<T, Args...> fmt) {
+inline fmt::basic_string_view<T> to_string_view(fmt::format_string<T, Args...> fmt) {
     return fmt;
 }
 #endif
