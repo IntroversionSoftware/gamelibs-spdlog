@@ -366,7 +366,7 @@ SPDLOG_CONSTEXPR_FUNC spdlog::wstring_view_t to_string_view(spdlog::wstring_view
 
 #ifndef SPDLOG_USE_STD_FORMAT
 template <typename T, typename... Args>
-inline fmt::basic_string_view<T> to_string_view(fmt::basic_format_string<T, Args...> fmt) {
+inline fmt::basic_string_view<T> to_string_view(fmt::format_string<T, Args...> fmt) {
     return fmt;
 }
 #elif __cpp_lib_format >= 202207L
