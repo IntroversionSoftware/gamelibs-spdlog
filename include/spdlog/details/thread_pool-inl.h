@@ -80,7 +80,7 @@ void SPDLOG_INLINE thread_pool::post_and_wait_for_flush(async_logger_ptr &&worke
     }
 
     if(cv_flag.load(std::memory_order_relaxed) == async_msg_flush::synced_not_flushed) {
-        throw spdlog_ex("Request for flushing got dropped.");
+        throw_spdlog_ex("Request for flushing got dropped.");
     }
 }
 
