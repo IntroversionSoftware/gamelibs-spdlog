@@ -59,9 +59,6 @@
     <ClInclude Include="..\include\spdlog\common-inl.h">
       <Filter>include\spdlog</Filter>
     </ClInclude>
-    <ClInclude Include="..\include\spdlog\default_formatter.h">
-      <Filter>include\spdlog</Filter>
-    </ClInclude>
     <ClInclude Include="..\include\spdlog\formatter.h">
       <Filter>include\spdlog</Filter>
     </ClInclude>
@@ -283,6 +280,15 @@
     </ClInclude>
     <ClInclude Include="..\include\spdlog\details\registry-inl.h">
       <Filter>include\spdlog\details</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\spdlog\sinks\callback_sink.h">
+      <Filter>include\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\spdlog\sinks\kafka_sink.h">
+      <Filter>include\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\spdlog\mdc.h">
+      <Filter>include\spdlog</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

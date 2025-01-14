@@ -37,7 +37,6 @@
   <ImportGroup Label="PropertySheets">
     <!-- Global Reference sheet -->
     <Import Project="..\..\Setup.props" Condition="!exists('..\..\Toolset.props') And exists('..\..\Setup.props')" />
-
     <!-- Toolset Property sheet -->
     <Import Project="..\..\Toolset.props" Condition="exists('..\..\Toolset.props')" />
   </ImportGroup>
@@ -80,7 +79,6 @@
     <ClInclude Include="..\include\spdlog\cfg\helpers.h" />
     <ClInclude Include="..\include\spdlog\common-inl.h" />
     <ClInclude Include="..\include\spdlog\common.h" />
-    <ClInclude Include="..\include\spdlog\default_formatter.h" />
     <ClInclude Include="..\include\spdlog\details\backtracer-inl.h" />
     <ClInclude Include="..\include\spdlog\details\backtracer.h" />
     <ClInclude Include="..\include\spdlog\details\circular_q.h" />
@@ -112,6 +110,7 @@
     <ClInclude Include="..\include\spdlog\fwd.h" />
     <ClInclude Include="..\include\spdlog\logger-inl.h" />
     <ClInclude Include="..\include\spdlog\logger.h" />
+    <ClInclude Include="..\include\spdlog\mdc.h" />
     <ClInclude Include="..\include\spdlog\pattern_formatter-inl.h" />
     <ClInclude Include="..\include\spdlog\pattern_formatter.h" />
     <ClInclude Include="..\include\spdlog\sinks\android_sink.h" />
@@ -121,10 +120,12 @@
     <ClInclude Include="..\include\spdlog\sinks\base_sink.h" />
     <ClInclude Include="..\include\spdlog\sinks\basic_file_sink-inl.h" />
     <ClInclude Include="..\include\spdlog\sinks\basic_file_sink.h" />
+    <ClInclude Include="..\include\spdlog\sinks\callback_sink.h" />
     <ClInclude Include="..\include\spdlog\sinks\daily_file_sink.h" />
     <ClInclude Include="..\include\spdlog\sinks\dist_sink.h" />
     <ClInclude Include="..\include\spdlog\sinks\dup_filter_sink.h" />
     <ClInclude Include="..\include\spdlog\sinks\hourly_file_sink.h" />
+    <ClInclude Include="..\include\spdlog\sinks\kafka_sink.h" />
     <ClInclude Include="..\include\spdlog\sinks\mongo_sink.h" />
     <ClInclude Include="..\include\spdlog\sinks\msvc_sink.h" />
     <ClInclude Include="..\include\spdlog\sinks\null_sink.h" />
