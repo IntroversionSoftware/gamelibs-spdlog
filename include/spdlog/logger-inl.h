@@ -16,6 +16,13 @@
 namespace spdlog {
 
 // public methods
+SPDLOG_INLINE logger::logger(std::string name, sink_ptr single_sink)
+	: logger(std::move(name), {std::move(single_sink)})
+{}
+
+SPDLOG_INLINE logger::logger(std::string name, sinks_init_list sinks)
+    : logger(std::move(name), sinks.begin(), sinks.end()) {}
+
 SPDLOG_INLINE logger::logger(const logger &other)
     : name_(other.name_),
       sinks_(other.sinks_),
