@@ -61,12 +61,10 @@ public:
           sinks_(begin, end) {}
 
     // Logger with single sink
-    logger(std::string name, sink_ptr single_sink)
-        : logger(std::move(name), {std::move(single_sink)}) {}
+    logger(std::string name, sink_ptr single_sink);
 
     // Logger with sinks init list
-    logger(std::string name, sinks_init_list sinks)
-        : logger(std::move(name), sinks.begin(), sinks.end()) {}
+    logger(std::string name, sinks_init_list sinks);
 
     virtual ~logger() = default;
 
