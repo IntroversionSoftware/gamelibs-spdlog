@@ -4,7 +4,7 @@
 #pragma once
 
 #ifndef SPDLOG_HEADER_ONLY
-    #include <spdlog/pattern_formatter.h>
+#include <spdlog/pattern_formatter.h>
 #endif
 
 #include <spdlog/details/fmt_helper.h>
@@ -12,7 +12,7 @@
 #include <spdlog/details/os.h>
 
 #ifndef SPDLOG_NO_TLS
-    #include <spdlog/mdc.h>
+#include <spdlog/mdc.h>
 #endif
 
 #include <spdlog/fmt/fmt.h>
@@ -702,9 +702,9 @@ public:
         : flag_formatter(padinfo) {}
 
 #ifdef _MSC_VER
-    #pragma warning(push)
-    #pragma warning(disable : 4127)  // consider using 'if constexpr' instead
-#endif                               // _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4127)  // consider using 'if constexpr' instead
+#endif                           // _MSC_VER
     static const char *basename(const char *filename) {
         // if the size is 2 (1 character + null terminator) we can use the more efficient strrchr
         // the branch will be elided by optimizations
@@ -721,7 +721,7 @@ public:
         }
     }
 #ifdef _MSC_VER
-    #pragma warning(pop)
+#pragma warning(pop)
 #endif  // _MSC_VER
 
     void format(const details::log_msg &msg, const std::tm &, memory_buf_t &dest) override {
