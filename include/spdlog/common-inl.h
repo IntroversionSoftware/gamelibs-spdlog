@@ -9,6 +9,7 @@
 
 #include <algorithm>
 #include <iterator>
+#include <cctype>
 
 namespace spdlog {
 namespace level {
